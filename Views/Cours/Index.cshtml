@@ -1,0 +1,86 @@
+﻿@model IEnumerable<GovEgy_2.Models.Cours>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="inner-banner ">
+    <section class="w3l-breadcrumb text-left">
+        <div class="container">
+            <ul class="breadcrumbs-custom-path">
+            </ul>
+        </div>
+    </section>
+</div>
+<br />
+<br />
+<div class="title-heading-w3 text-center mx-auto mb-5 pb-sm-4">
+
+    <h3 class="title-main title-big " style="font:bold">الدورات التدريبية</h3>
+
+</div>
+
+@if (User.IsInRole("Admin"))
+{
+    
+    <div class="btn btn-style btn-light mt-sm-3" href="about.html" style="color:white;text-align:center">
+        @Html.ActionLink("إضافة دورات جديدة", "Create")<i class="fa fa-arrow-right ml-2" aria-hidden="true"></i>
+    </div>
+}
+
+<!--/courses-->
+<section class="w3l-blogpost-content w3l-courses py-5">
+    <div class="container py-md-5">
+
+
+
+        <div class="row">
+
+
+            @foreach (var item in Model)
+            {
+
+            <div class="col-lg-4 col-md-6 item">
+                <div class="card">
+                    <div class="card-header p-0 position-relative">
+
+                        <a href="#">
+                            @if (!string.IsNullOrWhiteSpace(item.C_Image))
+                            {
+                                <img class="card-img-bottom d-block radius-image-full"
+                                     src="~/Content/Image/For_Reser/@Url.Content(item.C_Image)"
+                                     height="300"
+                                     alt="Card image cap" />
+                            }
+                            @*<img class="card-img-bottom d-block radius-image-full" src="assets/images/ab8.jpg" alt="Card image cap">*@
+                        </a>
+                    </div>
+                    <div class="card-body blog-details" style="text-align:center">
+                        <h5 class="price-review">@Html.DisplayFor(modelItem => item.Department.D_Name)</h5>
+                        <a href="#" class="blog-desc mt-2">
+                            @Html.DisplayFor(modelItem => item.C_Name)
+                        </a>
+                        <div class="course-meta mt-1">
+
+                            <a class="grid-link btn btn-success" href=" @Url.Action("Details", "Cours", new { id = item.Id })"> التفاصيل   </a>
+
+                        </div>
+                        <br />
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <div class="grid-link btn btn-info">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                            </div>
+                        }
+                    </div>
+                </div>
+                <br />
+            </div>
+
+                <br />
+            }
+        </div>
+    </div>
+</section>
+<!--//courses-->

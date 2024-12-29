@@ -1,0 +1,85 @@
+﻿@model GovEgy_2.Models.ContactService
+
+@{
+    ViewBag.Title = "Delete";
+}
+<div class="inner-banner ">
+    <section class="w3l-breadcrumb text-left">
+        <div class="container">
+            <ul class="breadcrumbs-custom-path">
+            </ul>
+        </div>
+    </section>
+</div>
+<br />
+<h2 style="text-align:center">حذف  </h2>
+<br />
+<hr />
+<h5>هل انت متاكد من حذف هذا ؟</h5>
+<div style="margin-left:10%;margin-right:10%">
+    <br />
+    <br />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceType_2.ServiceType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceType_2.ServiceType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Service_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Service_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Details)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Details)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-success" /> |
+            @Html.ActionLink("الرجوع", "Index")
+        </div>
+    }
+    <br />
+    <br />
+    <br />
+</div>

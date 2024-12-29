@@ -1,0 +1,80 @@
+﻿@model IEnumerable<GovEgy_2.Models.ContactService>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="inner-banner ">
+    <section class="w3l-breadcrumb text-left">
+        <div class="container">
+            <ul class="breadcrumbs-custom-path">
+            </ul>
+        </div>
+    </section>
+</div>
+
+<div style="margin-left:10%;margin-right:10%">
+    <br />
+    <div class="title-heading-w3 text-center mx-auto mb-5 pb-sm-4">
+        <h3 class="title-main title-big " style="font:bold">قائمة اتصالاتنا</h3>
+    </div>
+    <div class="btn btn-style btn-light mt-sm-3" href="about.html" style="color:white">
+        @Html.ActionLink("صفحة اتصالتنا", "Create")<i class="fa fa-arrow-right ml-2" aria-hidden="true"></i>
+    </div>
+
+    <br />
+    <br />
+
+    <table class="table">
+        <tr>
+            <th>
+                نوع الخدمة
+            </th>
+            <th>
+                الاسم
+            </th>
+            <th>
+                رقم التليفون
+            </th>
+            <th>
+                البريد الإلكتروني
+            </th>
+
+            <th>
+                التفاصيل
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceType_2.ServiceType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Details)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <br />
+    <br />
+    <br />
+    <br />
+</div>

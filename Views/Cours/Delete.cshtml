@@ -1,0 +1,111 @@
+﻿@model GovEgy_2.Models.Cours
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="inner-banner ">
+    <section class="w3l-breadcrumb text-left">
+        <div class="container">
+            <ul class="breadcrumbs-custom-path">
+            </ul>
+        </div>
+    </section>
+</div>
+<br />
+<h1 style="text-align:center">حذف الدورة اتدريبية </h1>
+<br />
+<hr />
+<h5>هل انت متاكد من حذف هذا ؟</h5>
+
+<div style="margin-left:10%;margin-right:10%">
+    <br />
+    <br />
+    <dl class="dl-horizontal">
+        <dt>
+            اسم القسم
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.D_Name)
+        </dd>
+
+        <dt>
+            اسم الدورة
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_Name)
+        </dd>
+
+        <dt>
+            سعر الدورة
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            التخفيضات
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discount)
+        </dd>
+
+        <dt>
+            عدد الحصص
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_Number)
+        </dd>
+
+        <dt>
+            وضع الدورة
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_Mode)
+        </dd>
+
+        <dt>
+            الوصف
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discription)
+        </dd>
+
+        <dt>
+            الصورة
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_Image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_File)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_File)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-success" /> |
+            @Html.ActionLink("الرجوع", "Index")
+        </div>
+        <br />
+        <br />
+        <br />
+    }
+</div>

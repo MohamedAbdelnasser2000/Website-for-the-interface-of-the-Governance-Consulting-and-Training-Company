@@ -1,0 +1,58 @@
+﻿@model GovEgy_2.Models.Department
+
+@{
+    ViewBag.Title = "Delete";
+}
+<div class="inner-banner ">
+    <section class="w3l-breadcrumb text-left">
+        <div class="container">
+            <ul class="breadcrumbs-custom-path">
+            </ul>
+        </div>
+    </section>
+</div>
+<br />
+<br />
+
+<h2 style="text-align:center"> حذف القسم </h2>
+<br />
+<hr />
+<h5>هل انت متاكد من حذف هذا ؟</h5>
+<div style="margin-left:10%;margin-right:10%">
+    <br />
+    <dl class="dl-horizontal">
+        <dt>
+            اسم القسم
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.D_Name)
+
+        </dd>
+
+        <dt>
+            الصورة
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.D_Image)
+
+        </dd>
+
+    </dl>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-success" /> |
+            @Html.ActionLink("رجوع", "Index")
+        </div>
+    }
+    <br />
+    <br />
+    <br />
+</div>

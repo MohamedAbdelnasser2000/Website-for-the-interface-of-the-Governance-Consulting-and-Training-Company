@@ -1,0 +1,100 @@
+﻿@model IEnumerable<GovEgy_2.Models.For_Reservations>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="inner-banner ">
+    <section class="w3l-breadcrumb text-left">
+        <div class="container">
+            <ul class="breadcrumbs-custom-path">
+            </ul>
+        </div>
+    </section>
+</div>
+<div style="margin-left:5%;margin-right:5%">
+
+    <div class="d-flex flex-column text-center mb-5 pt-5">
+        <h3 class="logo title-big" style="font-style: normal; font-size: 30px;font:bolder  ">قائمة الحجز  <span class="text-danger">والاستفسار</span></h3>
+
+    </div>
+    <br />
+
+    <div class="btn btn-style btn-light mt-sm-3" href="about.html" style="color:white">
+        @Html.ActionLink("صفحة حجز خدماتنا", "Create")<i class="fa fa-arrow-right ml-2" aria-hidden="true"></i>
+    </div>
+
+    <br />
+    <br />
+    <table class="table">
+        <tr>
+            <th>
+                <h5> نوع الخدمة</h5>
+            </th>
+            <th>
+                <h5>الاسم</h5>
+            </th>
+            <th>
+                <h5>رقم التليفون</h5>
+            </th>
+            <th>
+                <h5> البريدالالكتروني</h5>
+            </th>
+
+            <th>
+                <h5>تاريخ الوصول</h5>
+            </th>
+            <th>
+                <h5>تاريخ المغادرة</h5>
+            </th>
+            <th>
+                <h5>جواز السفر</h5>
+            </th>
+            <th>
+                <h5>التفاصيل</h5>
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceType.servicetype1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date_Of_Arrival)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departure_Date)
+                </td>
+                <td>
+                    @if (!string.IsNullOrWhiteSpace(item.Passport))
+                    {
+                        <img width="80" height="80"
+                             src="~/Content/Image/For_Reser/@Url.Content(item.Passport)"
+                             alt="Alternate Text" />
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Details)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

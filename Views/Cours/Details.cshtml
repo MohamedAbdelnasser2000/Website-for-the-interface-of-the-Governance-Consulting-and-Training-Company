@@ -1,0 +1,115 @@
+﻿@model GovEgy_2.Models.Cours
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="inner-banner ">
+    <section class="w3l-breadcrumb text-left">
+        <div class="container">
+            <ul class="breadcrumbs-custom-path">
+            </ul>
+        </div>
+    </section>
+</div>
+<br />
+<br />
+<h2 style="text-align:center">جميع تفاصيل الدورة التدريبية</h2>
+<br />
+<hr />
+<div class="dl-horizontal" style="margin-left:10%;margin-right:10%">
+    <br />
+
+    <dl class="dl-horizontal">
+        <dt>
+            : اسم القسم
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.D_Name)
+        </dd>
+
+        <dt>
+            : اسم الدورة
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_Name)
+        </dd>
+
+        <dt>
+            : سعر الدورة
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            : التخفيضات
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discount)
+        </dd>
+
+        <dt>
+            : عدد الساعات
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_Number)
+        </dd>
+
+        <dt>
+            : وضع الدورة
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_Mode)
+        </dd>
+
+        <dt>
+            : الوصف
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discription)
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_File)
+        </dt>
+
+        <dd>
+
+
+          @if (!string.IsNullOrWhiteSpace(Model.C_Image))
+                        {
+                            <img class="card-img-bottom d-block radius-image-full"
+                                 src="~/Content/Image/For_Reser/@Url.Content(Model.C_Image)"
+                                 height="300"
+                                 alt="Card image cap" />
+                        }
+
+
+
+
+            @*@Html.DisplayFor(model => model.C_File)*@
+        </dd>
+
+
+
+    </dl>
+</div>
+<br />
+<br />
+<br />
+<p class="btn btn-success">
+    @Html.ActionLink("صفحة الدورات", "Index")
+</p>
+<br />
+<br />
+<br />

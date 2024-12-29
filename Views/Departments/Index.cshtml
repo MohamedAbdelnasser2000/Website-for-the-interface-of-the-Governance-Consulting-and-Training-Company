@@ -1,0 +1,119 @@
+﻿@model IEnumerable<GovEgy_2.Models.Department>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="inner-banner ">
+    <section class="w3l-breadcrumb text-center">
+    </section>
+</div>
+<br />
+<br />
+<div class="title-heading-w3 text-center mx-auto mb-5 pb-sm-4" style=" font:bold">
+    <h1 class="title-main title-big " style="font: bold;  ">برامج تدريبية</h1>
+</div>
+
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="btn btn-style btn-light mt-sm-3" href="about.html" style="color:white;text-align:center">
+        @Html.ActionLink("Create New", "Create")<i class="fa fa-arrow-right ml-2" aria-hidden="true"></i>
+    </div>
+}
+@*<h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.D_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.D_Image)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(item.D_Name, "Index", "Cours", new { department = item.D_Name }, null)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.D_Image)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.D_Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.D_Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.D_Id })
+
+
+
+                </td>
+            </tr>
+        }
+
+    </table>*@
+
+
+
+
+
+
+
+<!--/courses-->
+<div class="w3l-homeblog py-5" id="homeblog">
+    <div class="container py-lg-5 py-md-4">
+
+        <div class="row top-pics ">
+
+
+            @foreach (var item in Model)
+            {
+
+                <div class="col-lg-3 col-md-6 mt-5" style="text-align:center">
+                    <div class="top-pic1">
+                        <div class="card-body blog-details">
+
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <div class=" btn btn-info">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.D_Id }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.D_Id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.D_Id })
+                                </div>
+                            }
+                                <br />
+                                <a href="#" class="blog-desc">
+                                    @Html.DisplayFor(modelItem => item.D_Name)
+                                </a>
+                                <div>
+                                    <a class="grid-link btn btn-success" href=" @Url.Action( "Index", "Cours", new { department = item.D_Name }, null) "> التفاصيل   </a>
+                                </div>
+
+
+
+                                @*<div style="text-align:center">
+
+                                    <a href="# " style="">
+                                        <img src="~/Content/Image/five-stars.png" style="width:90px; height:90px " />
+
+                                    </a>
+
+                                </div>*@
+                            </div>
+                    </div>
+                </div>
+
+
+
+            }
+
+        </div>
+    </div>
+</div>
+<!--//courses-->

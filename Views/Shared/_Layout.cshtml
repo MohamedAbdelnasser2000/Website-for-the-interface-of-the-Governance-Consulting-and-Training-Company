@@ -1,0 +1,422 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0"rel=“icon” herf="~/Content/Image/imaEge.png " name="viewport">
+    <meta content="الحوكمة للاستشارات والتدريب" name="keywords">
+    <meta content="الحوكمة للاستشارات والتدريب" name="description">
+
+    <link rel=“icon” herf="~/Content/Image/imaEge.png ">
+
+    <link href="~/Content/assets/css/style-starter.css" rel="stylesheet" />
+
+</head>
+<body>
+    <!--header-->
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark stroke">
+                @*<h1>
+                        <a class="navbar-brand" href="index.html">
+                            Digital<span class="sub-log">E</span>du
+                        </a>
+                    </h1>*@
+                <!-- if logo is image enable this
+                <a class="navbar-brand" href="#index.html">
+                    <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+                </a> -->
+                <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
+                        data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                    </span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    @Html.Partial("_LoginPartial")
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                        @*<li class="nav-link ">
+                                <a href="@Url.Action( "Register", "Account")" class=" nav-link"> <b>انشاء عضوية</b>  </a>
+                            </li>
+                            <li class="nav-link ">
+                                <a href="@Url.Action( "Login", "Account")" class=" nav-link"> <b> تسجيل دخول الأعضاء</b></a>
+                            </li>*@
+
+                        @if (User.IsInRole("Admin"))
+                        {
+
+                            <li class="nav-link ">
+                                <a href="@Url.Action( "Testing", "Services")" class=" nav-link"> <b> إدارة الايميلات</b> </a>
+                            </li>
+                        }
+                        <li class="nav-link ">
+                            <a href="@Url.Action( "Create", "Contacts")" class=" nav-link"> <b>تواصل معنا</b>  </a>
+                        </li>
+                        <li class="nav-link ">
+                            <a href="@Url.Action( "Create", "For_Reservations")" class=" nav-link"> <b> لحجز خدمتنا</b></a>
+                        </li>
+
+
+
+                        <li class="nav-link ">
+                            <a href="@Url.Action( "E_Markting", "Services")" class=" nav-link"> <b> خدمات التسويق الالكتروني</b> </a>
+                        </li>
+
+
+                        <li class="nav-link">
+                            <a href="@Url.Action( "Service", "Services")" class=" nav-link"><b>خدماتنا</b></a>
+                        </li>
+                        <li class="nav-link ">
+                            <a href="@Url.Action( "About", "Home")" class=" nav-link"><b>من نحن</b></a>
+                        </li>
+                        <li class="nav-link ">
+                            <a href="@Url.Action( "Index", "Home")" class=" nav-link"><b>الصفحة الرئيسية</b></a>
+                        </li>
+
+
+                        @*<li class="nav-link ">
+                                <a href="@Url.Action( "Our_Partners", "Services")" class=" nav-link"> <b> شركائنا</b> </a>
+                            </li>
+                            <li class="nav-link ">
+                                <a href="@Url.Action( "Our_Previous_Work", "Services")" class=" nav-link"> <b> سابقة اعمالنا</b> </a>
+                            </li>*@
+
+                    </ul>
+                </div>
+                <!-- toggle switch for light and dark theme -->
+
+                <div class="mobile-position">
+                    <nav class="navigation">
+                        <div class="theme-switch-wrapper">
+                            <label class="theme-switch" for="checkbox">
+                                <input type="checkbox" id="checkbox">
+                                <div class="mode-container py-1">
+                                    <i class="gg-sun"></i>
+                                    <i class="gg-moon"></i>
+                                </div>
+                            </label>
+                        </div>
+                    </nav>
+                </div>
+                <!-- //toggle switch for light and dark theme -->
+            </nav>
+        </div>
+    </header>
+    <!--/header-->
+    @RenderBody()
+    <!-- //End top header -->
+    <!-- footer -->
+    <section class="w3l-footer-29-main" id="canvas">
+        <div class="footer-29 py-5" style="text-align: center">
+            <div class="container py-lg-4" style="text-align: center;">
+                <div class="row footer-top-29" style="text-align: center">
+                    <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-1 pr-lg-5">
+                        <div class="footer-logo mb-4">
+                            <h1 class="" style="font-style: normal; font-size: 30px;font:bolder ;color:red ">الحوكمة للاستشارات والتدريب</h1>
+                        </div>
+                        <br />
+                        <p>نحن مبدعون. أفضل شركة خدمة في العالم. حقق أقصى استفادة من تقليل عمليات فريقك لإنشاء تجارب مذهلة</p>
+                        <br />
+
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-4 mt-lg-0 mt-5" style="text-align: center">
+                        <h6 class="footer-title-29">معلومات الاتصال </h6>
+
+                        <p class="mt-2">Phone : <a href="tel:+1(21) 234 4567">+201118480412</a></p>
+                        <p class="mt-2">Phone 2 : <a href="tel:+1(21) 234 4567">+201095466669</a></p>
+
+                        <p class="mt-2">Email : <a href="">ceo@gov-egy.com</a></p>
+                        <p class="mt-2">Support : <a href="">info@gov-egy.com</a></p>
+                        <p class="mt-2">العنوان : شارع مراد الجيزة بجوار الشهر العقاري الدور الرابع شقة 7</p>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-4 mt-lg-0 mt-5">
+                        <div class="main-social-footer-29 mt-4">
+                            <a href="#facebook" class="facebook"><span class="fa fa-facebook"></span></a>
+                            <a href="#twitter" class="twitter"><span class="fa fa-twitter"></span></a>
+                            <a href="#instagram" class="instagram"><span class="fa fa-instagram"></span></a>
+                            <a href="#linkedin" class="linkedin"><span class="fa fa-linkedin"></span></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- copyright -->
+        <section class="w3l-copyright text-center">
+            <div class="container">
+                <p class="copy-footer-29">&copy; @DateTime.Now.Year .Design by:Mohamed Krsoon<br />contact us: mnkq2000@gmail.com</p>
+
+            </div>
+
+            <!-- move top -->
+            <button onclick="topFunction()" id="movetop" title="Go to top">
+                &#10548;
+            </button>
+            <script>
+                // When the user scrolls down 20px from the top of the document, show the button
+                window.onscroll = function () {
+                    scrollFunction()
+                };
+
+                function scrollFunction() {
+                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        document.getElementById("movetop").style.display = "block";
+                    } else {
+                        document.getElementById("movetop").style.display = "none";
+                    }
+                }
+
+                // When the user clicks on the button, scroll to the top of the document
+                function topFunction() {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                }
+            </script>
+            <!-- /move top -->
+        </section>
+        <!-- //copyright -->
+    </section>
+    <!-- //footer -->
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+
+    @RenderSection("scripts", required: false)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="~/Content/assets/js/jquery-3.3.1.min.js"></script> <!-- Common jquery plugin -->
+
+    <script src="~/Content/assets/js/theme-change.js"></script><!-- theme switch js (light and dark)-->
+
+    <script src="~/Content/assets/js/owl.carousel.js"></script>
+    <!-- script for banner slider-->
+    <script>
+        $(document).ready(function () {
+            $('.owl-one').owlCarousel({
+                loop: true,
+                margin: 0,
+                nav: false,
+                responsiveClass: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplaySpeed: 1000,
+                autoplayHoverPause: false,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false
+                    },
+                    480: {
+                        items: 1,
+                        nav: false
+                    },
+                    667: {
+                        items: 1,
+                        nav: true
+                    },
+                    1000: {
+                        items: 1,
+                        nav: true
+                    }
+                }
+            })
+        })
+    </script>
+    <!-- //script -->
+    <!-- magnific popup -->
+    <script src="~/Content/assets/js/jquery.magnific-popup.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.popup-with-zoom-anim').magnificPopup({
+                type: 'inline',
+
+                fixedContentPos: false,
+                fixedBgPos: true,
+
+                overflowY: 'auto',
+
+                closeBtnInside: true,
+                preloader: false,
+
+                midClick: true,
+                removalDelay: 300,
+                mainClass: 'my-mfp-zoom-in'
+            });
+
+            $('.popup-with-move-anim').magnificPopup({
+                type: 'inline',
+
+                fixedContentPos: false,
+                fixedBgPos: true,
+
+                overflowY: 'auto',
+
+                closeBtnInside: true,
+                preloader: false,
+
+                midClick: true,
+                removalDelay: 300,
+                mainClass: 'my-mfp-slide-bottom'
+            });
+        });
+    </script>
+    <!-- //magnific popup -->
+    <!-- /counter-->
+    <script src="~/Content/assets/js/counter.js"></script>
+    <!-- //counter-->
+    <!-- script for tesimonials carousel slider -->
+    <script>
+        $(document).ready(function () {
+            $("#owl-demo1").owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: false,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false
+                    },
+                    1000: {
+                        items: 2,
+                        nav: false,
+                        loop: true
+                    }
+                }
+            })
+        })
+    </script>
+    <!-- //script for tesimonials carousel slider -->
+    <!--/MENU-JS-->
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
+
+        //Main navigation Active Class Add Remove
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
+    <!--//MENU-JS-->
+    <!-- disable body scroll which navbar is in active -->
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+    <!-- //disable body scroll which navbar is in active -->
+    <!--bootstrap-->
+    <script src="~/Content/assets/js/bootstrap.min.js"></script>
+    <!-- //bootstrap-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+            import * as datGui from "https://cdn.skypack.dev/dat.gui@0.7.7";
+
+            const state = {
+                fps: 60,
+                color: "#0f0",
+                charset: "0123456789ABCDEF"
+            };
+
+            const gui = new datGui.GUI();
+            const fpsCtrl = gui.add(state, "fps").min(1).max(120).step(1);
+            gui.addColor(state, "color");
+            gui.add(state, "charset");
+
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+
+            let w, h, p;
+            const resize = () => {
+                w = canvas.width = innerWidth;
+                h = canvas.height = innerHeight;
+
+                p = Array(Math.ceil(w / 10)).fill(0);
+            };
+            window.addEventListener("resize", resize);
+            resize();
+
+            const random = (items) => items[Math.floor(Math.random() * items.length)];
+
+            const draw = () => {
+                ctx.fillStyle = "rgba(0,0,0,.05)";
+                ctx.fillRect(0, 0, w, h);
+                ctx.fillStyle = state.color;
+
+                for (let i = 0; i < p.length; i++) {
+                    let v = p[i];
+                    ctx.fillText(random(state.charset), i * 10, v);
+                    p[i] = v >= h || v >= 10000 * Math.random() ? 0 : v + 10;
+                }
+            };
+
+            let interval = setInterval(draw, 1000 / state.fps);
+            fpsCtrl.onFinishChange((fps) => {
+                console.log(fps);
+                if (interval) {
+                    clearInterval(interval);
+                }
+                interval = setInterval(draw, 1000 / fps);
+            });
+
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+﻿@model GovEgy_2.Models.For_Reservations
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>For_Reservations</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceType.servicetype1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceType.servicetype1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Service_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Service_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_Of_Arrival)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_Of_Arrival)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Departure_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departure_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Passport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passport)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Details)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Details)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
